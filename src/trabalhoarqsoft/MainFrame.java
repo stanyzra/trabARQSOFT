@@ -1,24 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package trabalhoarqsoft;
 
 import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatLightLaf;
+import java.awt.CardLayout;
+import telas.UIEvento;
+import telas.UIEspectador;
+import telas.UIApresentacao;
+import telas.UILogin;
 
-/**
- *
- * @author aleix
- */
 public class MainFrame extends javax.swing.JFrame {
-
+    final CardLayout menu;
+    //final CardLayout opcoesSec;
     /**
      * Creates new form NewJFrame
      */
     public MainFrame() {
+//        System.out.println(cardMenu.getLayout());
         initComponents();
+        menu = (CardLayout) (cardMenu.getLayout());
+
     }
 
     /**
@@ -30,21 +30,276 @@ public class MainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroupConteudo = new javax.swing.ButtonGroup();
+        jSplitPane1 = new javax.swing.JSplitPane();
+        cardMenu = new javax.swing.JPanel();
+        headerUnlogged = new javax.swing.JPanel();
+        botaoCadastro = new javax.swing.JButton();
+        botaoHome = new javax.swing.JButton();
+        botaoLogin = new javax.swing.JButton();
+        pesquisaTextField = new javax.swing.JTextField();
+        headerEspectadorLogged = new javax.swing.JPanel();
+        pesquisaEspecTextField = new javax.swing.JTextField();
+        botaoCompras = new javax.swing.JButton();
+        botaoConta = new javax.swing.JButton();
+        bodyPainel = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        listaConteudo = new javax.swing.JList<>();
+        jLabel1 = new javax.swing.JLabel();
+        radioPalestras = new javax.swing.JRadioButton();
+        radioEventos = new javax.swing.JRadioButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Login");
+
+        jSplitPane1.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
+
+        cardMenu.setBackground(new java.awt.Color(204, 204, 204));
+        cardMenu.setLayout(new java.awt.CardLayout());
+
+        headerUnlogged.setBackground(new java.awt.Color(204, 204, 204));
+
+        botaoCadastro.setBackground(new java.awt.Color(204, 204, 204));
+        botaoCadastro.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        botaoCadastro.setForeground(new java.awt.Color(51, 51, 51));
+        botaoCadastro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/default.png"))); // NOI18N
+        botaoCadastro.setText("Cadastro");
+        botaoCadastro.setBorder(null);
+        botaoCadastro.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoCadastro.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/pressed.png"))); // NOI18N
+        botaoCadastro.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/hover.png"))); // NOI18N
+        botaoCadastro.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/selected.png"))); // NOI18N
+        botaoCadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoCadastroActionPerformed(evt);
+            }
+        });
+
+        botaoHome.setBackground(new java.awt.Color(204, 204, 204));
+        botaoHome.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        botaoHome.setForeground(new java.awt.Color(51, 51, 51));
+        botaoHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/default.png"))); // NOI18N
+        botaoHome.setText("Home");
+        botaoHome.setBorder(null);
+        botaoHome.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoHome.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/pressed.png"))); // NOI18N
+        botaoHome.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/hover.png"))); // NOI18N
+        botaoHome.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/selected.png"))); // NOI18N
+        botaoHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoHomeActionPerformed(evt);
+            }
+        });
+
+        botaoLogin.setBackground(new java.awt.Color(204, 204, 204));
+        botaoLogin.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        botaoLogin.setForeground(new java.awt.Color(51, 51, 51));
+        botaoLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/default.png"))); // NOI18N
+        botaoLogin.setText("Login");
+        botaoLogin.setBorder(null);
+        botaoLogin.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoLogin.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/pressed.png"))); // NOI18N
+        botaoLogin.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/hover.png"))); // NOI18N
+        botaoLogin.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/selected.png"))); // NOI18N
+        botaoLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoLoginActionPerformed(evt);
+            }
+        });
+
+        pesquisaTextField.setText("Pesquisar...");
+
+        javax.swing.GroupLayout headerUnloggedLayout = new javax.swing.GroupLayout(headerUnlogged);
+        headerUnlogged.setLayout(headerUnloggedLayout);
+        headerUnloggedLayout.setHorizontalGroup(
+            headerUnloggedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(headerUnloggedLayout.createSequentialGroup()
+                .addContainerGap(130, Short.MAX_VALUE)
+                .addComponent(botaoHome, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botaoCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botaoLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pesquisaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        headerUnloggedLayout.setVerticalGroup(
+            headerUnloggedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(headerUnloggedLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(headerUnloggedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botaoCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoHome, javax.swing.GroupLayout.PREFERRED_SIZE, 44, Short.MAX_VALUE)
+                    .addComponent(botaoLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pesquisaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
+        cardMenu.add(headerUnlogged, "cardHeaderUnlogged");
+
+        headerEspectadorLogged.setBackground(new java.awt.Color(204, 204, 204));
+        headerEspectadorLogged.setPreferredSize(new java.awt.Dimension(950, 56));
+
+        pesquisaEspecTextField.setText("Pesquisar...");
+
+        botaoCompras.setBackground(new java.awt.Color(204, 204, 204));
+        botaoCompras.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        botaoCompras.setForeground(new java.awt.Color(51, 51, 51));
+        botaoCompras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/default.png"))); // NOI18N
+        botaoCompras.setText("Minhas compras");
+        botaoCompras.setBorder(null);
+        botaoCompras.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoCompras.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/pressed.png"))); // NOI18N
+        botaoCompras.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/hover.png"))); // NOI18N
+        botaoCompras.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/selected.png"))); // NOI18N
+        botaoCompras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoComprasActionPerformed(evt);
+            }
+        });
+
+        botaoConta.setBackground(new java.awt.Color(204, 204, 204));
+        botaoConta.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        botaoConta.setForeground(new java.awt.Color(51, 51, 51));
+        botaoConta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/default.png"))); // NOI18N
+        botaoConta.setText("Minha conta");
+        botaoConta.setBorder(null);
+        botaoConta.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoConta.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/pressed.png"))); // NOI18N
+        botaoConta.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/hover.png"))); // NOI18N
+        botaoConta.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/selected.png"))); // NOI18N
+        botaoConta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoContaActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout headerEspectadorLoggedLayout = new javax.swing.GroupLayout(headerEspectadorLogged);
+        headerEspectadorLogged.setLayout(headerEspectadorLoggedLayout);
+        headerEspectadorLoggedLayout.setHorizontalGroup(
+            headerEspectadorLoggedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(headerEspectadorLoggedLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(botaoConta, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(botaoCompras, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 330, Short.MAX_VALUE)
+                .addComponent(pesquisaEspecTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        headerEspectadorLoggedLayout.setVerticalGroup(
+            headerEspectadorLoggedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(headerEspectadorLoggedLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(headerEspectadorLoggedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botaoCompras, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoConta, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pesquisaEspecTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 9, Short.MAX_VALUE))
+        );
+
+        cardMenu.add(headerEspectadorLogged, "cardHeaderEspecLogged");
+
+        jSplitPane1.setLeftComponent(cardMenu);
+
+        bodyPainel.setBackground(new java.awt.Color(204, 204, 204));
+
+        listaConteudo.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(listaConteudo);
+
+        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel1.setText("Lista de eventos cadastrados");
+
+        buttonGroupConteudo.add(radioPalestras);
+        radioPalestras.setForeground(new java.awt.Color(51, 51, 51));
+        radioPalestras.setSelected(true);
+        radioPalestras.setText("Palestras");
+        radioPalestras.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        buttonGroupConteudo.add(radioEventos);
+        radioEventos.setForeground(new java.awt.Color(51, 51, 51));
+        radioEventos.setText("Eventos");
+
+        javax.swing.GroupLayout bodyPainelLayout = new javax.swing.GroupLayout(bodyPainel);
+        bodyPainel.setLayout(bodyPainelLayout);
+        bodyPainelLayout.setHorizontalGroup(
+            bodyPainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bodyPainelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(bodyPainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(bodyPainelLayout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(radioPalestras)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(radioEventos)
+                        .addGap(0, 593, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
+        );
+        bodyPainelLayout.setVerticalGroup(
+            bodyPainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bodyPainelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(bodyPainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(radioEventos)
+                    .addComponent(radioPalestras)
+                    .addComponent(jLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 471, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jSplitPane1.setRightComponent(bodyPainel);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void botaoCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastroActionPerformed
+        // TODO add your handling code here:
+        menu.show(cardMenu, "cardHeaderEspecLogged");
+    }//GEN-LAST:event_botaoCadastroActionPerformed
+
+    private void botaoHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoHomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoHomeActionPerformed
+
+    private void botaoLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLoginActionPerformed
+        // TODO add your handling code here:
+        new UILogin().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_botaoLoginActionPerformed
+
+    private void botaoComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoComprasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoComprasActionPerformed
+
+    private void botaoContaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoContaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoContaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -92,5 +347,23 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel bodyPainel;
+    private javax.swing.JButton botaoCadastro;
+    private javax.swing.JButton botaoCompras;
+    private javax.swing.JButton botaoConta;
+    private javax.swing.JButton botaoHome;
+    private javax.swing.JButton botaoLogin;
+    private javax.swing.ButtonGroup buttonGroupConteudo;
+    private javax.swing.JPanel cardMenu;
+    private javax.swing.JPanel headerEspectadorLogged;
+    private javax.swing.JPanel headerUnlogged;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSplitPane jSplitPane1;
+    private javax.swing.JList<String> listaConteudo;
+    private javax.swing.JTextField pesquisaEspecTextField;
+    private javax.swing.JTextField pesquisaTextField;
+    private javax.swing.JRadioButton radioEventos;
+    private javax.swing.JRadioButton radioPalestras;
     // End of variables declaration//GEN-END:variables
 }
