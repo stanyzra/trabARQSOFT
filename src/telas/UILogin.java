@@ -45,6 +45,7 @@ public class UILogin extends javax.swing.JFrame {
         botaoVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Login");
 
         bodyPainel.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -126,13 +127,13 @@ public class UILogin extends javax.swing.JFrame {
         botaoLogin.setBackground(new java.awt.Color(204, 204, 204));
         botaoLogin.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         botaoLogin.setForeground(new java.awt.Color(51, 51, 51));
-        botaoLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/default.png"))); // NOI18N
+        botaoLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/default.png"))); // NOI18N
         botaoLogin.setText("Login");
         botaoLogin.setBorder(null);
         botaoLogin.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botaoLogin.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/pressed.png"))); // NOI18N
-        botaoLogin.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/hover.png"))); // NOI18N
-        botaoLogin.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/selected.png"))); // NOI18N
+        botaoLogin.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/pressed.png"))); // NOI18N
+        botaoLogin.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/hover.png"))); // NOI18N
+        botaoLogin.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/selected.png"))); // NOI18N
         botaoLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoLoginActionPerformed(evt);
@@ -184,13 +185,13 @@ public class UILogin extends javax.swing.JFrame {
         botaoCadastrar.setBackground(new java.awt.Color(204, 204, 204));
         botaoCadastrar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         botaoCadastrar.setForeground(new java.awt.Color(51, 51, 51));
-        botaoCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/default.png"))); // NOI18N
+        botaoCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/default.png"))); // NOI18N
         botaoCadastrar.setText("Cadastrar");
         botaoCadastrar.setBorder(null);
         botaoCadastrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botaoCadastrar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/pressed.png"))); // NOI18N
-        botaoCadastrar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/hover.png"))); // NOI18N
-        botaoCadastrar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/selected.png"))); // NOI18N
+        botaoCadastrar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/pressed.png"))); // NOI18N
+        botaoCadastrar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/hover.png"))); // NOI18N
+        botaoCadastrar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/selected.png"))); // NOI18N
         botaoCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoCadastrarActionPerformed(evt);
@@ -200,13 +201,13 @@ public class UILogin extends javax.swing.JFrame {
         botaoVoltar.setBackground(new java.awt.Color(204, 204, 204));
         botaoVoltar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         botaoVoltar.setForeground(new java.awt.Color(51, 51, 51));
-        botaoVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/default.png"))); // NOI18N
+        botaoVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/default.png"))); // NOI18N
         botaoVoltar.setText("Voltar");
         botaoVoltar.setBorder(null);
         botaoVoltar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botaoVoltar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/pressed.png"))); // NOI18N
-        botaoVoltar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/hover.png"))); // NOI18N
-        botaoVoltar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/selected.png"))); // NOI18N
+        botaoVoltar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/pressed.png"))); // NOI18N
+        botaoVoltar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/hover.png"))); // NOI18N
+        botaoVoltar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/selected.png"))); // NOI18N
         botaoVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoVoltarActionPerformed(evt);

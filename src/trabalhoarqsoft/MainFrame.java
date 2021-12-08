@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 import telas.UIEvento;
 import telas.UIEspectador;
 import telas.UIApresentacao;
+import telas.UICadastro;
 import telas.UILogin;
 
 public class MainFrame extends javax.swing.JFrame {
@@ -34,7 +35,6 @@ public class MainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroupConteudo = new javax.swing.ButtonGroup();
         jSplitPane1 = new javax.swing.JSplitPane();
         cardMenu = new javax.swing.JPanel();
         headerUnlogged = new javax.swing.JPanel();
@@ -51,8 +51,8 @@ public class MainFrame extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         listaConteudo = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
-        radioPalestras = new javax.swing.JRadioButton();
-        radioEventos = new javax.swing.JRadioButton();
+        apresentacoesBox = new javax.swing.JCheckBox();
+        eventosBox = new javax.swing.JCheckBox();
         menuBar = new javax.swing.JMenuBar();
         menuPalestras = new javax.swing.JMenu();
         criarApresentacaoMenuItem = new javax.swing.JMenuItem();
@@ -62,7 +62,7 @@ public class MainFrame extends javax.swing.JFrame {
         meusEventosMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Login");
+        setTitle("Home");
 
         jSplitPane1.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
@@ -74,13 +74,13 @@ public class MainFrame extends javax.swing.JFrame {
         botaoCadastro.setBackground(new java.awt.Color(204, 204, 204));
         botaoCadastro.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         botaoCadastro.setForeground(new java.awt.Color(51, 51, 51));
-        botaoCadastro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/default.png"))); // NOI18N
+        botaoCadastro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/default.png"))); // NOI18N
         botaoCadastro.setText("Cadastro");
         botaoCadastro.setBorder(null);
         botaoCadastro.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botaoCadastro.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/pressed.png"))); // NOI18N
-        botaoCadastro.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/hover.png"))); // NOI18N
-        botaoCadastro.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/selected.png"))); // NOI18N
+        botaoCadastro.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/pressed.png"))); // NOI18N
+        botaoCadastro.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/hover.png"))); // NOI18N
+        botaoCadastro.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/selected.png"))); // NOI18N
         botaoCadastro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoCadastroActionPerformed(evt);
@@ -90,13 +90,13 @@ public class MainFrame extends javax.swing.JFrame {
         botaoHome.setBackground(new java.awt.Color(204, 204, 204));
         botaoHome.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         botaoHome.setForeground(new java.awt.Color(51, 51, 51));
-        botaoHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/default.png"))); // NOI18N
+        botaoHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/default.png"))); // NOI18N
         botaoHome.setText("Home");
         botaoHome.setBorder(null);
         botaoHome.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botaoHome.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/pressed.png"))); // NOI18N
-        botaoHome.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/hover.png"))); // NOI18N
-        botaoHome.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/selected.png"))); // NOI18N
+        botaoHome.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/pressed.png"))); // NOI18N
+        botaoHome.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/hover.png"))); // NOI18N
+        botaoHome.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/selected.png"))); // NOI18N
         botaoHome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoHomeActionPerformed(evt);
@@ -106,13 +106,13 @@ public class MainFrame extends javax.swing.JFrame {
         botaoLogin.setBackground(new java.awt.Color(204, 204, 204));
         botaoLogin.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         botaoLogin.setForeground(new java.awt.Color(51, 51, 51));
-        botaoLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/default.png"))); // NOI18N
+        botaoLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/default.png"))); // NOI18N
         botaoLogin.setText("Login");
         botaoLogin.setBorder(null);
         botaoLogin.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botaoLogin.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/pressed.png"))); // NOI18N
-        botaoLogin.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/hover.png"))); // NOI18N
-        botaoLogin.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/selected.png"))); // NOI18N
+        botaoLogin.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/pressed.png"))); // NOI18N
+        botaoLogin.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/hover.png"))); // NOI18N
+        botaoLogin.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/selected.png"))); // NOI18N
         botaoLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoLoginActionPerformed(evt);
@@ -126,7 +126,7 @@ public class MainFrame extends javax.swing.JFrame {
         headerUnloggedLayout.setHorizontalGroup(
             headerUnloggedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(headerUnloggedLayout.createSequentialGroup()
-                .addContainerGap(130, Short.MAX_VALUE)
+                .addContainerGap(145, Short.MAX_VALUE)
                 .addComponent(botaoHome, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botaoCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -158,13 +158,13 @@ public class MainFrame extends javax.swing.JFrame {
         botaoCompras.setBackground(new java.awt.Color(204, 204, 204));
         botaoCompras.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         botaoCompras.setForeground(new java.awt.Color(51, 51, 51));
-        botaoCompras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/default.png"))); // NOI18N
+        botaoCompras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/default.png"))); // NOI18N
         botaoCompras.setText("Minhas compras");
         botaoCompras.setBorder(null);
         botaoCompras.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botaoCompras.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/pressed.png"))); // NOI18N
-        botaoCompras.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/hover.png"))); // NOI18N
-        botaoCompras.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/selected.png"))); // NOI18N
+        botaoCompras.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/pressed.png"))); // NOI18N
+        botaoCompras.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/hover.png"))); // NOI18N
+        botaoCompras.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/selected.png"))); // NOI18N
         botaoCompras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoComprasActionPerformed(evt);
@@ -174,13 +174,13 @@ public class MainFrame extends javax.swing.JFrame {
         botaoConta.setBackground(new java.awt.Color(204, 204, 204));
         botaoConta.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         botaoConta.setForeground(new java.awt.Color(51, 51, 51));
-        botaoConta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/default.png"))); // NOI18N
+        botaoConta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/default.png"))); // NOI18N
         botaoConta.setText("Minha conta");
         botaoConta.setBorder(null);
         botaoConta.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botaoConta.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/pressed.png"))); // NOI18N
-        botaoConta.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/hover.png"))); // NOI18N
-        botaoConta.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/selected.png"))); // NOI18N
+        botaoConta.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/pressed.png"))); // NOI18N
+        botaoConta.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/hover.png"))); // NOI18N
+        botaoConta.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/selected.png"))); // NOI18N
         botaoConta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoContaActionPerformed(evt);
@@ -190,13 +190,13 @@ public class MainFrame extends javax.swing.JFrame {
         botaoSairConta.setBackground(new java.awt.Color(204, 204, 204));
         botaoSairConta.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         botaoSairConta.setForeground(new java.awt.Color(51, 51, 51));
-        botaoSairConta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/default.png"))); // NOI18N
+        botaoSairConta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/default.png"))); // NOI18N
         botaoSairConta.setText("Sair");
         botaoSairConta.setBorder(null);
         botaoSairConta.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botaoSairConta.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/pressed.png"))); // NOI18N
-        botaoSairConta.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/hover.png"))); // NOI18N
-        botaoSairConta.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/selected.png"))); // NOI18N
+        botaoSairConta.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/pressed.png"))); // NOI18N
+        botaoSairConta.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/hover.png"))); // NOI18N
+        botaoSairConta.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/selected.png"))); // NOI18N
         botaoSairConta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoSairContaActionPerformed(evt);
@@ -214,7 +214,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(botaoCompras, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botaoSairConta, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
                 .addComponent(pesquisaEspecTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -237,7 +237,7 @@ public class MainFrame extends javax.swing.JFrame {
         bodyPainel.setBackground(new java.awt.Color(204, 204, 204));
 
         listaConteudo.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "evento 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            String[] strings = { "evento 1", "apresentação 1", "evento 2", "apresentação 2", "evento 3", "apresentação 3", "evento 4", "apresentação 4", "evento 5", "apresentação 5", "evento 6", "apresentação 6" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
@@ -246,14 +246,11 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setText("Lista de eventos cadastrados");
 
-        buttonGroupConteudo.add(radioPalestras);
-        radioPalestras.setForeground(new java.awt.Color(51, 51, 51));
-        radioPalestras.setText("Palestras");
-        radioPalestras.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        apresentacoesBox.setForeground(new java.awt.Color(51, 51, 51));
+        apresentacoesBox.setText("Apresentações");
 
-        buttonGroupConteudo.add(radioEventos);
-        radioEventos.setForeground(new java.awt.Color(51, 51, 51));
-        radioEventos.setText("Eventos");
+        eventosBox.setForeground(new java.awt.Color(51, 51, 51));
+        eventosBox.setText("Eventos");
 
         javax.swing.GroupLayout bodyPainelLayout = new javax.swing.GroupLayout(bodyPainel);
         bodyPainel.setLayout(bodyPainelLayout);
@@ -265,10 +262,10 @@ public class MainFrame extends javax.swing.JFrame {
                     .addGroup(bodyPainelLayout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(radioPalestras)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(radioEventos)
-                        .addGap(0, 593, Short.MAX_VALUE))
+                        .addComponent(apresentacoesBox)
+                        .addGap(18, 18, 18)
+                        .addComponent(eventosBox)
+                        .addGap(0, 565, Short.MAX_VALUE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
@@ -277,9 +274,9 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(bodyPainelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(bodyPainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(radioEventos)
-                    .addComponent(radioPalestras)
-                    .addComponent(jLabel1))
+                    .addComponent(jLabel1)
+                    .addComponent(apresentacoesBox)
+                    .addComponent(eventosBox))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 471, Short.MAX_VALUE)
                 .addContainerGap())
@@ -332,7 +329,8 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void botaoCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastroActionPerformed
         // TODO add your handling code here:
-        menu.show(cardMenu, "cardHeaderEspecLogged");
+        new UICadastro().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_botaoCadastroActionPerformed
 
        
@@ -445,6 +443,7 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox apresentacoesBox;
     private javax.swing.JPanel bodyPainel;
     private javax.swing.JButton botaoCadastro;
     private javax.swing.JButton botaoCompras;
@@ -452,10 +451,10 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton botaoHome;
     private javax.swing.JButton botaoLogin;
     private javax.swing.JButton botaoSairConta;
-    private javax.swing.ButtonGroup buttonGroupConteudo;
     private javax.swing.JPanel cardMenu;
     private javax.swing.JMenuItem criarApresentacaoMenuItem;
     private javax.swing.JMenuItem criarEventosMenuItem;
+    private javax.swing.JCheckBox eventosBox;
     private javax.swing.JPanel headerEspectadorLogged;
     private javax.swing.JPanel headerUnlogged;
     private javax.swing.JLabel jLabel1;
@@ -469,7 +468,5 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem minhasApresentacoesMenuItem;
     private javax.swing.JTextField pesquisaEspecTextField;
     private javax.swing.JTextField pesquisaTextField;
-    private javax.swing.JRadioButton radioEventos;
-    private javax.swing.JRadioButton radioPalestras;
     // End of variables declaration//GEN-END:variables
 }
