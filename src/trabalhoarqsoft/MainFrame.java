@@ -4,11 +4,11 @@ import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
-import telas.UIEvento;
-import telas.UIEspectador;
-import telas.UIApresentacao;
-import telas.UICadastro;
-import telas.UILogin;
+import view.UIEvento;
+import view.UIEspectador;
+import view.UIApresentacao;
+import view.UICadastro;
+import view.UILogin;
 
 public class MainFrame extends javax.swing.JFrame {
 
