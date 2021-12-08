@@ -3,22 +3,26 @@ package trabalhoarqsoft;
 import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import telas.UIEvento;
 import telas.UIEspectador;
 import telas.UIApresentacao;
 import telas.UILogin;
 
 public class MainFrame extends javax.swing.JFrame {
+
+    public static int user;
     final CardLayout menu;
+    
     //final CardLayout opcoesSec;
     /**
      * Creates new form NewJFrame
      */
     public MainFrame() {
-//        System.out.println(cardMenu.getLayout());
         initComponents();
         menu = (CardLayout) (cardMenu.getLayout());
-
+        setHeader(user);
+//        System.out.println(user);
     }
 
     /**
@@ -42,6 +46,7 @@ public class MainFrame extends javax.swing.JFrame {
         pesquisaEspecTextField = new javax.swing.JTextField();
         botaoCompras = new javax.swing.JButton();
         botaoConta = new javax.swing.JButton();
+        botaoSairConta = new javax.swing.JButton();
         bodyPainel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         listaConteudo = new javax.swing.JList<>();
@@ -175,6 +180,22 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        botaoSairConta.setBackground(new java.awt.Color(204, 204, 204));
+        botaoSairConta.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        botaoSairConta.setForeground(new java.awt.Color(51, 51, 51));
+        botaoSairConta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/default.png"))); // NOI18N
+        botaoSairConta.setText("Sair");
+        botaoSairConta.setBorder(null);
+        botaoSairConta.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoSairConta.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/pressed.png"))); // NOI18N
+        botaoSairConta.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/hover.png"))); // NOI18N
+        botaoSairConta.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/selected.png"))); // NOI18N
+        botaoSairConta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoSairContaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout headerEspectadorLoggedLayout = new javax.swing.GroupLayout(headerEspectadorLogged);
         headerEspectadorLogged.setLayout(headerEspectadorLoggedLayout);
         headerEspectadorLoggedLayout.setHorizontalGroup(
@@ -184,7 +205,9 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(botaoConta, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(botaoCompras, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 330, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botaoSairConta, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE)
                 .addComponent(pesquisaEspecTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -195,18 +218,19 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGroup(headerEspectadorLoggedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoCompras, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botaoConta, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pesquisaEspecTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pesquisaEspecTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoSairConta, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 9, Short.MAX_VALUE))
         );
 
         cardMenu.add(headerEspectadorLogged, "cardHeaderEspecLogged");
 
-        jSplitPane1.setLeftComponent(cardMenu);
+        jSplitPane1.setTopComponent(cardMenu);
 
         bodyPainel.setBackground(new java.awt.Color(204, 204, 204));
 
         listaConteudo.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            String[] strings = { "evento 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
@@ -255,7 +279,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jSplitPane1.setRightComponent(bodyPainel);
+        jSplitPane1.setBottomComponent(bodyPainel);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -283,6 +307,16 @@ public class MainFrame extends javax.swing.JFrame {
         menu.show(cardMenu, "cardHeaderEspecLogged");
     }//GEN-LAST:event_botaoCadastroActionPerformed
 
+    private void setHeader(int user){
+        switch (user) {
+            case 0 -> menu.show(cardMenu, "cardHeaderUnlogged");
+            case 1 -> menu.show(cardMenu, "cardHeaderEspecLogged");
+            case 2 -> menu.show(cardMenu, "cardHeaderEspecLogged");
+            case 3 -> menu.show(cardMenu, "cardHeaderEventoLogged");
+            default -> System.out.println("Erro: verificar tipo de user");
+        }
+    }
+    
     private void botaoHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoHomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_botaoHomeActionPerformed
@@ -300,6 +334,15 @@ public class MainFrame extends javax.swing.JFrame {
     private void botaoContaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoContaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_botaoContaActionPerformed
+
+    private void botaoSairContaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSairContaActionPerformed
+        // TODO add your handling code here:
+        int resposta = JOptionPane.showConfirmDialog(null, "Deseja mesmo sair?", "Sair", 1);
+        if (resposta == 0){ // 0 se sim
+            user = resposta;
+            setHeader(user);
+        }
+    }//GEN-LAST:event_botaoSairContaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -353,6 +396,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton botaoConta;
     private javax.swing.JButton botaoHome;
     private javax.swing.JButton botaoLogin;
+    private javax.swing.JButton botaoSairConta;
     private javax.swing.ButtonGroup buttonGroupConteudo;
     private javax.swing.JPanel cardMenu;
     private javax.swing.JPanel headerEspectadorLogged;

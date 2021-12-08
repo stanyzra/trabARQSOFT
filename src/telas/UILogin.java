@@ -5,6 +5,7 @@
  */
 package telas;
 
+import javax.swing.JOptionPane;
 import trabalhoarqsoft.MainFrame;
 
 /**
@@ -12,7 +13,7 @@ import trabalhoarqsoft.MainFrame;
  * @author aleix
  */
 public class UILogin extends javax.swing.JFrame {
-
+    int user;
     /**
      * Creates new form UILogin
      */
@@ -234,7 +235,7 @@ public class UILogin extends javax.swing.JFrame {
             .addGroup(bodyPainelLayout.createSequentialGroup()
                 .addGap(110, 110, 110)
                 .addComponent(loginPainel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addGroup(bodyPainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -270,6 +271,24 @@ public class UILogin extends javax.swing.JFrame {
 
     private void botaoLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLoginActionPerformed
         // TODO add your handling code here:
+//        System.out.println(senhaField.getText());
+        if(emailField.getText().equals("spec") && senhaField.getText().equals("spec")){
+            MainFrame.user = 1;
+            new MainFrame().show(true);
+            this.dispose();
+        }
+        else if(emailField.getText().equals("palest") && senhaField.getText().equals("palest")){
+            MainFrame.user = 2;
+            new MainFrame().show(true);
+            this.dispose();
+        }
+        else if(emailField.getText().equals("evento") && senhaField.getText().equals("evento")){
+            MainFrame.user = 3;
+            new MainFrame().show(true);
+            this.dispose();
+        }
+        else
+            JOptionPane.showMessageDialog(null, "Login inválido", "Login", JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_botaoLoginActionPerformed
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
