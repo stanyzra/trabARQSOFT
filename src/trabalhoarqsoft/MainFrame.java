@@ -21,7 +21,7 @@ public class MainFrame extends javax.swing.JFrame {
     public MainFrame() {
         initComponents();
         menu = (CardLayout) (cardMenu.getLayout());
-        setHeader(user);
+        setHeaderAndMenuBar(user);
 //        System.out.println(user);
     }
 
@@ -53,6 +53,13 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         radioPalestras = new javax.swing.JRadioButton();
         radioEventos = new javax.swing.JRadioButton();
+        menuBar = new javax.swing.JMenuBar();
+        menuPalestras = new javax.swing.JMenu();
+        criarApresentacaoMenuItem = new javax.swing.JMenuItem();
+        minhasApresentacoesMenuItem = new javax.swing.JMenuItem();
+        menuEventos = new javax.swing.JMenu();
+        criarEventosMenuItem = new javax.swing.JMenuItem();
+        meusEventosMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
@@ -241,7 +248,6 @@ public class MainFrame extends javax.swing.JFrame {
 
         buttonGroupConteudo.add(radioPalestras);
         radioPalestras.setForeground(new java.awt.Color(51, 51, 51));
-        radioPalestras.setSelected(true);
         radioPalestras.setText("Palestras");
         radioPalestras.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
@@ -281,6 +287,28 @@ public class MainFrame extends javax.swing.JFrame {
 
         jSplitPane1.setBottomComponent(bodyPainel);
 
+        menuPalestras.setText("Apresentações");
+
+        criarApresentacaoMenuItem.setText("Criar apresentação");
+        menuPalestras.add(criarApresentacaoMenuItem);
+
+        minhasApresentacoesMenuItem.setText("Minhas apresentações");
+        menuPalestras.add(minhasApresentacoesMenuItem);
+
+        menuBar.add(menuPalestras);
+
+        menuEventos.setText("Eventos");
+
+        criarEventosMenuItem.setText("Criar evento");
+        menuEventos.add(criarEventosMenuItem);
+
+        meusEventosMenuItem.setText("Meus eventos");
+        menuEventos.add(meusEventosMenuItem);
+
+        menuBar.add(menuEventos);
+
+        setJMenuBar(menuBar);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -307,13 +335,40 @@ public class MainFrame extends javax.swing.JFrame {
         menu.show(cardMenu, "cardHeaderEspecLogged");
     }//GEN-LAST:event_botaoCadastroActionPerformed
 
-    private void setHeader(int user){
+       
+    private void setHeaderAndMenuBar(int user){
         switch (user) {
-            case 0 -> menu.show(cardMenu, "cardHeaderUnlogged");
-            case 1 -> menu.show(cardMenu, "cardHeaderEspecLogged");
-            case 2 -> menu.show(cardMenu, "cardHeaderEspecLogged");
-            case 3 -> menu.show(cardMenu, "cardHeaderEventoLogged");
-            default -> System.out.println("Erro: verificar tipo de user");
+            case 0 -> {
+                menu.show(cardMenu, "cardHeaderUnlogged");
+                criarApresentacaoMenuItem.setEnabled(false);
+                minhasApresentacoesMenuItem.setEnabled(false);
+                criarEventosMenuItem.setEnabled(false);
+                meusEventosMenuItem.setEnabled(false);
+            }
+            case 1 -> {
+                menu.show(cardMenu, "cardHeaderEspecLogged");
+                criarApresentacaoMenuItem.setEnabled(false);
+                minhasApresentacoesMenuItem.setEnabled(false);
+                criarEventosMenuItem.setEnabled(false);
+                meusEventosMenuItem.setEnabled(false);
+            }
+            case 2 -> {
+                menu.show(cardMenu, "cardHeaderEspecLogged");
+                criarApresentacaoMenuItem.setEnabled(true);
+                minhasApresentacoesMenuItem.setEnabled(true);
+                criarEventosMenuItem.setEnabled(false);
+                meusEventosMenuItem.setEnabled(false);
+            }
+            case 3 -> {
+                menu.show(cardMenu, "cardHeaderEventoLogged");
+                criarApresentacaoMenuItem.setEnabled(true);
+                minhasApresentacoesMenuItem.setEnabled(true);
+                criarEventosMenuItem.setEnabled(true);
+                meusEventosMenuItem.setEnabled(true);
+            }
+            default -> {
+                System.out.println("Erro: verifique o usuário.");
+            }
         }
     }
     
@@ -340,7 +395,7 @@ public class MainFrame extends javax.swing.JFrame {
         int resposta = JOptionPane.showConfirmDialog(null, "Deseja mesmo sair?", "Sair", 1);
         if (resposta == 0){ // 0 se sim
             user = resposta;
-            setHeader(user);
+            setHeaderAndMenuBar(user);
         }
     }//GEN-LAST:event_botaoSairContaActionPerformed
 
@@ -399,12 +454,19 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton botaoSairConta;
     private javax.swing.ButtonGroup buttonGroupConteudo;
     private javax.swing.JPanel cardMenu;
+    private javax.swing.JMenuItem criarApresentacaoMenuItem;
+    private javax.swing.JMenuItem criarEventosMenuItem;
     private javax.swing.JPanel headerEspectadorLogged;
     private javax.swing.JPanel headerUnlogged;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JList<String> listaConteudo;
+    private javax.swing.JMenuBar menuBar;
+    private javax.swing.JMenu menuEventos;
+    private javax.swing.JMenu menuPalestras;
+    private javax.swing.JMenuItem meusEventosMenuItem;
+    private javax.swing.JMenuItem minhasApresentacoesMenuItem;
     private javax.swing.JTextField pesquisaEspecTextField;
     private javax.swing.JTextField pesquisaTextField;
     private javax.swing.JRadioButton radioEventos;
