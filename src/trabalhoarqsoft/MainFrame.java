@@ -3,11 +3,10 @@ package trabalhoarqsoft;
 import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.CardLayout;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
-import view.UIEvento;
-import view.UIEspectador;
-import view.UIApresentacao;
 import view.UICadastro;
+import view.UIGerenciarPagamento;
 import view.UILogin;
 
 public class MainFrame extends javax.swing.JFrame {
@@ -209,12 +208,12 @@ public class MainFrame extends javax.swing.JFrame {
             headerEspectadorLoggedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(headerEspectadorLoggedLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(botaoConta, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(botaoCompras, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botaoConta, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botaoSairConta, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
+                .addComponent(botaoCompras, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botaoSairConta, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 325, Short.MAX_VALUE)
                 .addComponent(pesquisaEspecTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -240,6 +239,11 @@ public class MainFrame extends javax.swing.JFrame {
             String[] strings = { "evento 1", "apresentação 1", "evento 2", "apresentação 2", "evento 3", "apresentação 3", "evento 4", "apresentação 4", "evento 5", "apresentação 5", "evento 6", "apresentação 6" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
+        });
+        listaConteudo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaConteudoClicked(evt);
+            }
         });
         jScrollPane1.setViewportView(listaConteudo);
 
@@ -278,7 +282,7 @@ public class MainFrame extends javax.swing.JFrame {
                     .addComponent(apresentacoesBox)
                     .addComponent(eventosBox))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 471, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 395, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -319,8 +323,7 @@ public class MainFrame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -396,6 +399,19 @@ public class MainFrame extends javax.swing.JFrame {
             setHeaderAndMenuBar(user);
         }
     }//GEN-LAST:event_botaoSairContaActionPerformed
+
+    private void listaConteudoClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaConteudoClicked
+        // TODO add your handling code here:
+        JList list = (JList)evt.getSource(); 
+        if (evt.getClickCount() == 2) {
+            int index = list.locationToIndex(evt.getPoint()); // pega o index
+            UIGerenciarPagamento.indexList = index;
+            UIGerenciarPagamento.nomeConteudo = listaConteudo.getSelectedValue();
+//            new UIGerenciarPagamento().teste(listaConteudo.getSelectedValue(), index);
+            new UIGerenciarPagamento().setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_listaConteudoClicked
 
     /**
      * @param args the command line arguments
