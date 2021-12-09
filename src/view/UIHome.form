@@ -176,9 +176,6 @@
                       <Image iconType="3" name="/view/images/selected.png"/>
                     </Property>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoCadastroActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="botaoHome">
                   <Properties>
@@ -209,9 +206,6 @@
                       <Image iconType="3" name="/view/images/selected.png"/>
                     </Property>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoHomeActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="botaoLogin">
                   <Properties>
@@ -242,9 +236,6 @@
                       <Image iconType="3" name="/view/images/selected.png"/>
                     </Property>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoLoginActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="pesquisaTextField">
                   <Properties>
@@ -334,9 +325,6 @@
                       <Image iconType="3" name="/view/images/selected.png"/>
                     </Property>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoComprasActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="botaoConta">
                   <Properties>
@@ -367,9 +355,6 @@
                       <Image iconType="3" name="/view/images/selected.png"/>
                     </Property>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoContaActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="botaoSairConta">
                   <Properties>
@@ -400,9 +385,6 @@
                       <Image iconType="3" name="/view/images/selected.png"/>
                     </Property>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoSairContaActionPerformed"/>
-                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -483,9 +465,6 @@
                       </StringArray>
                     </Property>
                   </Properties>
-                  <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="listaConteudoClicked"/>
-                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>

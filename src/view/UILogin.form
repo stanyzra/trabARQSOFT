@@ -309,9 +309,6 @@
                   <Image iconType="3" name="/view/images/selected.png"/>
                 </Property>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoLoginActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="botaoRecuperarSenha">
               <Properties>
@@ -356,9 +353,6 @@
               <Image iconType="3" name="/view/images/selected.png"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoCadastrarActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="botaoVoltar">
           <Properties>
@@ -389,9 +383,6 @@
               <Image iconType="3" name="/view/images/selected.png"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoVoltarActionPerformed"/>
-          </Events>
         </Component>
       </SubComponents>
     </Container>
