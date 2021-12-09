@@ -30,14 +30,17 @@ public class LoginController {
         this.view.getBotaoLogin().addActionListener((ActionEvent actionEvent) -> {
             if(view.getEmailField().getText().equals("spec") && new String(view.getSenhaField().getPassword()).equals("spec")) {
                 HomeController.user = 1;
+                ContaController.user = 1;
                 view.dispose();
                 new HomeController(new UIHome()).controla();
             } else if(view.getEmailField().getText().equals("palest") && new String(view.getSenhaField().getPassword()).equals("palest")) {
                 HomeController.user = 2;
+                ContaController.user = 2;
                 view.dispose();
                 new HomeController(new UIHome()).controla();
             } else if(view.getEmailField().getText().equals("evento") && new String(view.getSenhaField().getPassword()).equals("evento")) {
                 HomeController.user = 3;
+                ContaController.user = 3;
                 view.dispose();
                 new HomeController(new UIHome()).controla();
             } else {

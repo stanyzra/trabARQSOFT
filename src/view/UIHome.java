@@ -5,7 +5,7 @@ import javax.swing.JButton;
 import javax.swing.JList;
 
 public class UIHome extends javax.swing.JFrame {
-    private CardLayout menu;
+    private final CardLayout menu;
     //final CardLayout opcoesSec;
 
     public UIHome() {
@@ -277,7 +277,6 @@ public class UIHome extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
     public JButton getBotaoLogin() {
         return botaoLogin;
     }

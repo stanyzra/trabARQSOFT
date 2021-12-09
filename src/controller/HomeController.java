@@ -7,6 +7,7 @@ import javax.swing.JList;
 import javax.swing.JOptionPane;
 import view.UIHome;
 import view.UICadastro;
+import view.UIConta;
 import view.UIGerenciarPagamento;
 import view.UILogin;
 
@@ -48,7 +49,7 @@ public class HomeController {
                 view.setEnabledMeusEventosMenuItem(false);
             }
             case 3 -> {
-                view.showMenu("cardHeaderEventoLogged");
+                view.showMenu("cardHeaderEspecLogged");
                 view.setEnabledCriarApresentacaoMenuItem(true);
                 view.setEnabledMinhasApresentacoesMenuItem(true);
                 view.setEnabledCriarEventosMenuItem(true);
@@ -75,6 +76,10 @@ public class HomeController {
                 user = resposta;
                 setHeaderAndMenuBar(user);
             }
+        });
+        this.view.getBotaoConta().addActionListener((ActionEvent actionEvent) -> {
+            view.dispose();
+            new ContaController(new UIConta()).controla();
         });
         this.view.getListaConteudo().addMouseListener(new MouseAdapter() {
             @Override
